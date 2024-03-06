@@ -1,0 +1,41 @@
+header{
+    .logo{
+        font-weight: 600;
+        font-size: 26px;
+    }
+
+    .presentation{
+        margin: 50px 0;
+        background: url(./../../images/figa.jpg) no-repeat;
+        width: 100%;
+        height: 900px;
+        background-size: cover;
+        background-position: center center;
+        background-blend-mode: multiply;
+        position: relative;
+    }
+
+    .presentation::after{
+        content: 'ОГОГ, НИЧЕГО СЕБЕ';
+        color: black;
+        position: absolute;
+        top: 350px;
+        left: 500px;
+        width:300px;
+        font-size: 40px;
+
+        
+    }
+
+    .presentation::before{
+        content: 'С УМА СОЙТИ НЕ МОГУ';
+        color: black;
+        position: absolute;
+        top: 500px;
+        left: 500px;
+        width:300px;
+        font-size: 40px;
+        
+        
+    }
+}
