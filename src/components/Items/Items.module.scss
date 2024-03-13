@@ -5,4 +5,19 @@ main{
     justify-content: space-between;
     border-radius: 30px 30px 0 0;
     
+    h2,p,b{
+        margin: 10px 20px;
+        color: white;
+    }
+
+    p{
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    b{
+        color: red;
+        font-size: 20px;
+    }
+
 }

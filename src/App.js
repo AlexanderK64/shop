@@ -22,10 +22,18 @@ export default function App() {
     {id:10, title:'вывеска 10',img:'10.png',desc:' описание 10',category:'текстовые',price:'1000'},
   ]);
 
+  const [orders,setOrders]=useState([]);
+
+  const addToOrder=(item)=>{
+    if(!orders.some((el)=>el.id===item.id)){
+        setOrders([...orders,item]);
+    }
+  }
+
   return (
     <div className="wrapper">
-      <Header/>
-      <Items allItems={items}/>
+      <Header orders={orders}/>
+      <Items allItems={items} onAdd={addToOrder} />
       <Footer/>
 
     </div>
