@@ -1,6 +1,23 @@
 header{
 position: relative;
 
+
+.empty{
+    h2{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.summa{
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    
+}
+
     .logo{
         font-weight: 600;
         font-size: 26px;
@@ -19,58 +36,25 @@ position: relative;
             transition: opacity 500ms ease;
         }
 
-        li:hover{
+        &:hover{
             opacity: 0.5;
         }
     }
-    .presentation{
-        margin: 50px 0;
-        background: url(./../../images/banner.jpg) no-repeat;
-        width: 100%;
-        height: 400px;
-        background-size: cover;
-        background-position: center center;
-        background-blend-mode: multiply;
-        position: relative;
-    }
-
-    .shopcart{
+    .shopCart{
         position: absolute;
         top: 30px;
         right: 0;
         width: 450px;
         min-height: 100px;
-        background: black;
+        background: grey;
         -webkit-box-shadow: -55px 53px 5px 0px rgba(34, 60, 80, 0.2);
         -moz-box-shadow: -55px 53px 5px 0px rgba(34, 60, 80, 0.2);
         box-shadow: -55px 53px 5px 0px rgba(34, 60, 80, 0.2);
         z-index: 1000;
-
+        padding: 20px;
+        padding-bottom: 0;
     }
 
-    &::after{
-        content: 'ОГОГ, НИЧЕГО СЕБЕ';
-        color: white;
-        position: absolute;
-        top: 150px;
-        left: 50px;
-        width:200px;
-        font-size: 40px;
-
-        
-    }
-
-    &::before{
-        content: 'С УМА СОЙТИ НЕ МОГУ';
-        color: white;
-        position: absolute;
-        top: 100px;
-        left: 1050px;
-        width:150px;
-        font-size: 40px;
-        
-        
-    }
 
     .shopCartButton{
         float: right;
@@ -78,11 +62,46 @@ position: relative;
         transition: color, transform 500ms ease;
         font-size: 38px;
 
-    }
+    
 
-    .shopCartButton:hover,
-    .shopCartButton.active{
+    &:hover,
+    &.active{
+        transform: scale(1.5);
         color: hotpink;
     }
+    }
+}
 
+
+.presentation{
+    margin: 50px 0;
+    background: url(./../../images/banner.jpg) no-repeat;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    position: relative;
+
+&::after{
+    content: 'ОГОГ, НИЧЕГО СЕБЕ';
+    color: white;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    width:200px;
+    font-size: 40px;
+  
+}
+
+&::before{
+    content: 'С УМА СОЙТИ НЕ МОГУ';
+    color: white;
+    position: absolute;
+    top: 100px;
+    left: 1050px;
+    width:150px;
+    font-size: 40px;
+     
+    }
 }
