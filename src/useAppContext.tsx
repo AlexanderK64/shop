@@ -1,6 +1,6 @@
 import React,{useState,useEffect,useContext} from "react";
 
-const AppContext=React.createContext();
+const AppContext=React.createContext<any>(null);
 
 export const useAppContext = () =>{
     const context = useContext(AppContext);
@@ -11,9 +11,9 @@ export const useAppContext = () =>{
     return context;
 }
 
-const AppProvider = ({children}) =>{
+const AppProvider:React.FC<{children:React.ReactNode}> = ({children}) =>{
 
-    const [items,setItems]=useState([
+    const [items,setItems]=useState<any[]>([
         {id:1, title:'вывеска 1',img:'1.png',desc:' описание 1',category:'one',price:'100'},
         {id:2, title:'вывеска 2',img:'2.png',desc:' описание 2',category:'текстовые',price:'200'},
         {id:3, title:'вывеска 3',img:'3.png',desc:' описание 3',category:'текстовые',price:'300'},
@@ -26,26 +26,26 @@ const AppProvider = ({children}) =>{
         {id:10, title:'вывеска 10',img:'10.png',desc:' описание 10',category:'текстовые',price:'1000'},
       ]);
     
-      const [orders,setOrders]=useState([]);
-      const [currentItems,setCurrentItems]=useState([]);
-      const [showFullItem,setShowFullItem]=useState(false);
-      const [fullItem,setFullItem]=useState({});
+      const [orders,setOrders]=useState<any[]>([]);
+      const [currentItems,setCurrentItems]=useState<any[]>([]);
+      const [showFullItem,setShowFullItem]=useState<boolean>(false);
+      const [fullItem,setFullItem]=useState<any>({});
     
       useEffect(()=>{
         setCurrentItems(items);
       },[items]);
     
-    const deleteOrder = (id) =>{
+    const deleteOrder = (id:number) =>{
       setOrders(orders.filter((el)=> el.id!==id));
     }
     
-      const addToOrder=(item)=>{
+      const addToOrder=(item:any)=>{
         if(!orders.some((el)=>el.id===item.id)){
             setOrders([...orders,item]);
         }
       }
     
-      const chooseCategory = (category)=>{
+      const chooseCategory = (category:string)=>{
         if(category==="all"){
           setCurrentItems(items);
         }
@@ -54,7 +54,7 @@ const AppProvider = ({children}) =>{
         }
       }
     
-    const onShowItem = (item) =>{
+    const onShowItem = (item:any) =>{
       setFullItem(item);
       setShowFullItem(!showFullItem);
     }

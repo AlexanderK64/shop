@@ -1,8 +1,10 @@
 import React from "react";
-import style from "./Footer.module.scss"
+import style from "./Footer.module.scss";
 
-export default function footer(){
+const Footer:React.FC=()=>{
     return(
         <footer>Все права на месте</footer>
     );
-}
+};
+
+export default Footer;

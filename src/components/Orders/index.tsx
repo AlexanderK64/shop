@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./Orders.module.scss";
 import { MdDeleteForever } from "react-icons/md";
-import {useAppContext} from "./../../useAppContext";
+import { useAppContext } from "./../../useAppContext.tsx";
 
-export default function Orders({item}){
+
+interface Props{
+    item:any;
+}
+
+const Orders:React.FC<Props>=({item})=>{
 
     const {deleteOrder} = useAppContext();
 
@@ -15,4 +20,6 @@ export default function Orders({item}){
             <MdDeleteForever onClick={()=>deleteOrder(item.id)} className={styles.deleteIcon}/>
         </div>
     );
-}
+};
+
+export default Orders;
